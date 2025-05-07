@@ -1,0 +1,24 @@
+name = "futbol-page"
+type = "webpack"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[site]
+bucket = "./dist"
+entry-point = "workers-site"
+
+[build]
+command = "npm run build"
+upload.format = "service-worker"
+
+[[workers]]
+name = "api"
+script = "workers/api.js"
+route = "/api/*"
+
+[[workers]]
+name = "comments"
+script = "workers/comments.js"
+route = "/api/comments/*" 
