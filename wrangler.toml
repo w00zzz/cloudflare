@@ -1,6 +1,6 @@
 name = "futbol-page"
 type = "webpack"
-account_id = ""
+account_id = "27003167a1aa791e96abe11a8324b346"
 workers_dev = true
 route = ""
 zone_id = ""
