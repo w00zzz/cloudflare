@@ -1,24 +1,20 @@
 name = "futbol-page"
-type = "webpack"
 account_id = "27003167a1aa791e96abe11a8324b346"
 workers_dev = true
-route = ""
-zone_id = ""
+compatibility_date = "2025-05-07"
 
 [site]
-bucket = "./dist"
-entry-point = "workers-site"
+bucket = "./dist"              # Aquí se encuentra la salida de vite
+# "entry-point" eliminado porque ya no es necesario
 
 [build]
 command = "npm run build"
-upload.format = "service-worker"
+# "upload.format" eliminado: wrangler detecta automáticamente el formato
 
-[[workers]]
-name = "api"
-script = "workers/api.js"
-route = "/api/*"
+[[routes]]
+pattern = "/api/*"
+script = "api"
 
-[[workers]]
-name = "comments"
-script = "workers/comments.js"
-route = "/api/comments/*" 
+[[routes]]
+pattern = "/api/comments/*"
+script = "comments"
